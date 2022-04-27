@@ -33,6 +33,7 @@ class Heap:
             if i==j:
                 break
             self.values[i], self.values[j] = self.values[j], self.values[i]
+            i = j
 
     def heapify(arr):
         heap = Heap()
@@ -40,15 +41,16 @@ class Heap:
             heap.insert(item)
         return heap
 
-    def get_sorted_array(heap):
-        arr = []
-        while heap.size:
-            arr.append(heap.pop())
-        return arr
+def get_sorted_array(heap):
+    arr = []
+    while heap.size:
+        arr.append(heap.pop())
+    return arr
 
-    def heapify_fast(arr):
-        heap = Heap()
-        heap.values = arr[:]
-        heap.size = len(arr)
-        for i in reversed(range(heap.size//2)):
-            heap.sift_down(i)
+def heapify_fast(arr):
+    heap = Heap()
+    heap.values = arr[:]
+    heap.size = len(arr)
+    for i in reversed(range(heap.size//2)):
+        heap.sift_down(i)
+    return get_sorted_array(heap)

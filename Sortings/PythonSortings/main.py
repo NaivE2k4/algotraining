@@ -17,3 +17,7 @@ TestAlgo(MergeSort.MergeSort)
 TestAlgo(QuadraticSortings.InsertSort)
 TestAlgo(QuadraticSortings.ChoiseSort)
 TestAlgo(QuadraticSortings.BubbleSort)
+
+import heap
+arr = [3,5,1,2,10,6,8,4]
+print(heap.heapify_fast(arr))

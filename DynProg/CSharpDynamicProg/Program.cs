@@ -6,7 +6,11 @@ namespace CSharpDynamicProg
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //var res = Subsequences.PrefixFunc("abcabcasab");
+            //var res = Subsequences.SubstringKMP("abcdabdeabfgabcdefgh", "abc");
+            //var res = Subsequences.CoolerZFunc("abcabcasab");
+            var res = Subsequences.SubstringKMP("abcdabdeabfgabcdefgh", "abc", true);
+            Console.ReadLine();
         }
     }
 }
