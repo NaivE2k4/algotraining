@@ -3,6 +3,10 @@ using System.Linq;
 
 namespace CSharpGraphs
 {
+    /// <summary>
+    /// Мысли в процессе: класс выглядит очень неудобным для решения несложных задач
+    /// Нужно слишком много интерфейсов, чтобы он был функционален для широкого спектра задач
+    /// </summary>
     public class MyGraph
     {
         public List<GraphEdge> Edges = new();
