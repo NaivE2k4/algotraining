@@ -15,4 +15,16 @@ def backpack(Mmax, M, V):
                     F[itemid][backpackSize] = max(F[itemid][backpackSize-1], F[itemid-1][backpackSize])
             else: #Предмет не влезает в пустой рюкзак - берем лучшее из предыдущего
                 F[itemid][backpackSize] = F[itemid-1][backpackSize]
-    print(F)
+    return F
+
+def get_chosen_items(matrix, weights, mmax):
+    result = []
+    m = mmax
+    for i in range(len(weights), 0, -1):#Обратный цикл по предметам
+        if(matrix[i][m] == matrix[i-1][m]): #Без этого предмета такая же стоимость
+            continue #Этот предмет не берем
+        result.append(i-1)
+        m -= weights[i-1] # предмет берем, вычитаем из общей массы его массу
+        if m == 0:
+            break;
+    return result
