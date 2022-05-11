@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="heapsort.fs" />
     <Compile Include="sortfuncs.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>

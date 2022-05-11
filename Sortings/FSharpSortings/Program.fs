@@ -45,3 +45,14 @@ printfn "%A" testArr6
 mergeSort testArr6
     |>ignore
 printfn "%A" testArr6
+
+open heapsort
+
+//Test
+let mutable testArr7 = [|3;5;10;1;4;9;2;6;8;7;40;25;15;18;11|]
+printfn "%A" testArr7
+heapsort testArr7
+    |>ignore
+printfn "%A" testArr7
+
+Console.ReadLine() |> ignore
