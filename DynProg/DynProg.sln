@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32407.337
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PyDyn", "PyDyn\PyDyn.pyproj", "{EB891E78-41DF-47B0-8845-5A69C321759F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpDynamicProg", "CSharpDynamicProg\CSharpDynamicProg.csproj", "{0AA2A27C-13FA-45B0-9EFD-BCB756196856}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpDyn", "FSharpDyn\FSharpDyn.fsproj", "{4F386960-0857-4F51-A1AE-4F88FA2CE04E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +21,10 @@ Global
 		{0AA2A27C-13FA-45B0-9EFD-BCB756196856}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AA2A27C-13FA-45B0-9EFD-BCB756196856}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AA2A27C-13FA-45B0-9EFD-BCB756196856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F386960-0857-4F51-A1AE-4F88FA2CE04E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F386960-0857-4F51-A1AE-4F88FA2CE04E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F386960-0857-4F51-A1AE-4F88FA2CE04E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F386960-0857-4F51-A1AE-4F88FA2CE04E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
