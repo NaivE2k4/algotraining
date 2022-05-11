@@ -2,12 +2,15 @@
 from Dykstra import dijkstra
 from Dykstra import reveal_shortest_path
 from FloydWarshall import FW
+from BellmanFord import BF
 def main():
     G = read_graph()
     start = int(input("С какой вершины начать?"))
     while start not in G:
         start = int(input("Такой вершины в графе нет. С какой вершины начать?"))
-    FW(G)
+    BF(G, start)
+        
+        #FW(G)
     #shortest_distances = dijkstra(G, start)
     #finish = input("К какой вершине построить путь?")
     #while start not in G:
