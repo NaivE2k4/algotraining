@@ -75,6 +75,17 @@ let gis4 (arr:int[]) =
 //Пока мне не видно преимуществ в таком подходе, но я допускаю, что я пока не особо много чего понимаю
 
 
-//Функция для поиска рассторяния Левенштейна
-//let levenstein str1 str2 = 
-    
+//Функция для поиска расстояния Левенштейна
+let levenstein (str1:string) (str2:string) = 
+    //Создание матрицы M*N где нулевые столбец и колонка будут использоваться для удобства вычислений
+    let F = Array2D.init (str1.Length+1) (str2.Length+1) (fun i j -> 0)
+    for i = 1 to str1.Length do 
+        for j = 1 to str2.Length do
+            if i = j && str1.[i-1] = str2.[j-1] then
+                F.[i,j] <- F.[i-1,j-1]
+            else
+                let a = min F.[i-1,j] F.[i,j-1] 
+                            |> min F.[i-1,j-1]
+                            |> (+) 1
+                F.[i,j] <- a
+    F           
