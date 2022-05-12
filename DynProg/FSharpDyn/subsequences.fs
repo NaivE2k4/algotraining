@@ -88,4 +88,5 @@ let levenstein (str1:string) (str2:string) =
                             |> min F.[i-1,j-1]
                             |> (+) 1
                 F.[i,j] <- a
-    F           
+    F 
+    
