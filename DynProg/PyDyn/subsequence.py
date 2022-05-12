@@ -43,7 +43,7 @@ def pref_func(S):
         Pprev = P[i-1] #длина ПФ для предыдущей строки
         #если предыдущий префикс+1 элемент == новому элементу то длина +=1
         while Pprev > 0 and S[Pprev] != S[i]:
-            Pprev = P[Pprev]
+            Pprev = P[Pprev-1]#Тут была ошибка!
         if(S[Pprev] == S[i]):
             Pprev+=1
         P[i] = Pprev

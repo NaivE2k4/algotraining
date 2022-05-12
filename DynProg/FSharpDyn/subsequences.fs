@@ -90,3 +90,18 @@ let levenstein (str1:string) (str2:string) =
                 F.[i,j] <- a
     F 
     
+//Функция для поиска подстроки алгоритмом Кнута-Морриса-Пратта
+//Сначала - префикс функция
+//Значение Pi это максимальная длина собственного суффикса, являющегося одновременно префиксом
+let prefixfunc (str:string) =
+    let P = Array.init (str.Length) (fun i -> if i=0 then 0 else 0)
+    for i = 1 to str.Length-1 do
+        let mutable j = P.[i-1]
+        while j > 0 && str.[i] <> str.[j] do
+            j <- P.[j-1]
+        if str.[i] = str.[j] then 
+            j <- j+1
+        P.[i] <- j
+    P
+ 
+ 

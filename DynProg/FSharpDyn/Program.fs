@@ -21,3 +21,11 @@ let str1 = "ABCABC"
 let str2 = "ADFABF"
 levenstein str1 str2
 |>printfn "%A"
+
+let str3 = "ABCDABCDA"
+prefixfunc str3
+|>printfn "%A"
+
+let str4 = "AAAB"
+prefixfunc str4
+|>printfn "%A"
