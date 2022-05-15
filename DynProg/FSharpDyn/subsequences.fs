@@ -1,7 +1,5 @@
 ﻿module subsequences
 //Функция для поиска длины наибольшей возрастающей подпоследовательности
-//Здесь сделано из своей головы, у Хирьянова поизящнее наверное, через максимум (см решение на питоне)
-//Решение ошибочно!
 let gis (arr:int[]) =
     let F = Array.init arr.Length (fun i -> if i = 0 then 1 else 0)
     for i = 1 to arr.Length-1 do
@@ -95,13 +93,27 @@ let levenstein (str1:string) (str2:string) =
 //Значение Pi это максимальная длина собственного суффикса, являющегося одновременно префиксом
 let prefixfunc (str:string) =
     let P = Array.init (str.Length) (fun i -> if i=0 then 0 else 0)
+    //Идем с первого элемента так как P0 не может быть по определению
     for i = 1 to str.Length-1 do
         let mutable j = P.[i-1]
-        while j > 0 && str.[i] <> str.[j] do
+        //Хитрые перескоки, которые заключаются в следующем:
+        //Для элемента str[i] Pi надо увеличить на единицу если он совпадает с элементом, идущим за префиксом для i-1 элемента
+        //Но помимо этого случая, есть случай ИНАЧЕ - надо поискать префикс меньшего размера
+        //Нехитрой логикой доказывается, что для этого надо смотреть элементы по индексу = P(i-1)
+        while j > 0 && str.[i] <> str.[j] do //проматываем негативные случаи
             j <- P.[j-1]
         if str.[i] = str.[j] then 
             j <- j+1
         P.[i] <- j
     P
  
- 
+let KMP (source:string) (sub:string) =
+    let pref = (sub + "#" + source)
+                |> prefixfunc
+                |> Array.indexed
+                |> Array.filter (fun (ind,value)-> 
+                                    if value = sub.Length then true else false)
+                |> Array.map (fun (ind,value)-> (ind - sub.Length*2))
+
+    printfn "%A" pref
+    ()

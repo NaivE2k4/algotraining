@@ -29,3 +29,6 @@ prefixfunc str3
 let str4 = "AAAB"
 prefixfunc str4
 |>printfn "%A"
+
+KMP "ABCDABCDA" "ABC"
+|> printfn "%A"
