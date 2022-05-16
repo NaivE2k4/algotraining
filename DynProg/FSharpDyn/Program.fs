@@ -32,3 +32,11 @@ prefixfunc str4
 
 KMP "ABCDABCDA" "ABC"
 |> printfn "%A"
+
+open backpack
+
+let weights = [|2;1;4|]
+let values = [|3;2;4|]
+let F = backpack weights values 5
+getbackpackindexes F weights values 5
+|> printfn "%A"
